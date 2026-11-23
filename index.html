@@ -1,3 +1,22 @@
+
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No thanks
+1 of 913
+(no subject)
+Inbox
+
+Gabriel <ggmmss04@gmail.com>
+Attachments
+12:30 AM (0 minutes ago)
+to me
+
+ One attachment
+  •  Scanned by Gmail
+index.html
+100%
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Para a minha pretinha linda</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
@@ -65,10 +84,11 @@ for(let i=RN.length-1;i>=0;i--){const o=RN[i];o.y+=o.v;if(o.y>H+o.z){RN.splice(i
 if(Math.random()<.3)pt({x:r(0,W),y:-20,vx:r(-.4,.6),vy:r(.8,1.8)});
 for(let i=PT.length-1;i>=0;i--){const p=PT[i];p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.r+=p.vr;p.l--;if(p.l<0||p.y>H+30){PT.splice(i,1);continue}cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.globalAlpha=Math.min(1,p.l/30);cx.fillStyle=p.c;cx.beginPath();p.h?hp(cx,p.s):cx.ellipse(0,0,p.s,p.s*.55,0,0,6.283);cx.fill();cx.restore()}}
 requestAnimationFrame(fr);
-function say(t,cb){let d=0;const f=()=>{if(!d){d=1;a.volume=.6;cb&&cb()}};a.volume=.22;if(!sp)return setTimeout(f,3500);
+function say(t,cb){let d=0;const f=()=>{if(!d){d=1;a.volume=.6;cb&&cb()}};return setTimeout(f,t.length*75+2500);
 const u=new SpeechSynthesisUtterance(t);u.lang="pt-BR";u.rate=.92;u.pitch=1.1;const v=sp.getVoices().filter(v=>v.lang.startsWith("pt"));u.voice=v.find(v=>/Luciana|Francisca|Maria|Google|Female/i.test(v.name))||v[0]||null;u.onend=f;u.onerror=f;sp.speak(u);setTimeout(f,t.length*115+2500)}
 const L=[["Pra minha pretinha linda","Pra minha pretinha linda.","t1"],["“Não há nada mais verdadeiramente artístico do que amar as pessoas.”<small>VINCENT VAN GOGH</small>","Não há nada mais verdadeiramente artístico do que amar as pessoas. Vincent van Gogh.","q"],["Você é o meu céu estrelado, pretinha.","Você é o meu céu estrelado, pretinha.","t2"],["do seu sapo","Do seu sapo.","t3"]];
 function line(i){if(i>=L.length)return;const d=document.createElement("div");d.className=L[i][2];d.innerHTML=L[i][0];$("t").appendChild(d);setTimeout(()=>d.classList.add("s"),50);say(L[i][1],()=>setTimeout(()=>line(i+1),700))}
 $("fl").onclick=()=>{a.volume=.5;a.play().catch(()=>{});setTimeout(()=>{if(a.paused||a.error)$("m").style.display="block"},1500);if(sp){sp.cancel();sp.getVoices()}
 $("intro").classList.add("off");run=1;t0=performance.now();plant();setTimeout(()=>{rain=1;line(0)},2200);setTimeout(()=>{document.addEventListener("click",e=>burst(e.clientX,e.clientY))},1500)};
 </script></body></html>
+Displaying index.html.
