@@ -86,7 +86,11 @@ for(let i=PT.length-1;i>=0;i--){const p=PT[i];p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.r+
 requestAnimationFrame(fr);
 function say(t,cb){let d=0;const f=()=>{if(!d){d=1;a.volume=.6;cb&&cb()}};return setTimeout(f,t.length*75+2500);
 const u=new SpeechSynthesisUtterance(t);u.lang="pt-BR";u.rate=.92;u.pitch=1.1;const v=sp.getVoices().filter(v=>v.lang.startsWith("pt"));u.voice=v.find(v=>/Luciana|Francisca|Maria|Google|Female/i.test(v.name))||v[0]||null;u.onend=f;u.onerror=f;sp.speak(u);setTimeout(f,t.length*115+2500)}
-const L=[["Pra minha pretinha linda","Pra minha pretinha linda.","t1"],["“Não há nada mais verdadeiramente artístico do que amar as pessoas.”<small>VINCENT VAN GOGH</small>","Não há nada mais verdadeiramente artístico do que amar as pessoas. Vincent van Gogh.","q"],["Você é o meu céu estrelado, pretinha.","Você é o meu céu estrelado, pretinha.","t2"],["do seu sapo","Do seu sapo.","t3"]];
+const L = [
+  ["Pra minha pretinha linda", "Pra minha pretinha linda.", "t1"],
+  ["\"Traziam não sei que fluido misterioso e enérgico, uma força que arrastava para dentro, como a vaga que se retira da praia, nos dias de ressaca.\"<small>DOM CASMURRO</small>", "\"Traziam não sei que fluido misterioso e enérgico, uma força que arrastava para dentro, como a vaga que se retira da praia, nos dias de ressaca.\" - Dom Casmurro", "q"],
+  ["do seu sapo", "Do seu sapo.", "t3"]
+];
 function line(i){if(i>=L.length)return;const d=document.createElement("div");d.className=L[i][2];d.innerHTML=L[i][0];$("t").appendChild(d);setTimeout(()=>d.classList.add("s"),50);say(L[i][1],()=>setTimeout(()=>line(i+1),700))}
 $("fl").onclick=()=>{a.volume=.5;a.play().catch(()=>{});setTimeout(()=>{if(a.paused||a.error)$("m").style.display="block"},1500);if(sp){sp.cancel();sp.getVoices()}
 $("intro").classList.add("off");run=1;t0=performance.now();plant();setTimeout(()=>{rain=1;line(0)},2200);setTimeout(()=>{document.addEventListener("click",e=>burst(e.clientX,e.clientY))},1500)};
